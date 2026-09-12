@@ -770,7 +770,15 @@ curl -v https://expired.badssl.com
 ```
 
 ```
-(вставити вивід)
+* Host expired.badssl.com:443 was resolved.
+* IPv6: (none)
+* IPv4: 104.154.89.105
+*   Trying 104.154.89.105:443...
+* schannel: disabled automatic use of client certificate
+* ALPN: curl offers http/1.1
+* schannel: next InitializeSecurityContext failed: SEC_E_CERT_EXPIRED (0x80090328) - The received certificate has expired.
+* closing connection #0
+curl: (35) schannel: next InitializeSecurityContext failed: SEC_E_CERT_EXPIRED (0x80090328) - The received certificate has expired.
 ```
 
 **Випадок 2**
@@ -780,7 +788,20 @@ curl -v https://wrong.host.badssl.com
 ```
 
 ```
-(вставити вивід)
+* Host wrong.host.badssl.com:443 was resolved.
+* IPv6: (none)
+* IPv4: 104.154.89.105
+*   Trying 104.154.89.105:443...
+* schannel: disabled automatic use of client certificate
+* ALPN: curl offers http/1.1
+* schannel: SNI or certificate check failed: SEC_E_WRONG_PRINCIPAL (0x80090322) - The target principal name is incorrect.
+* closing connection #0
+curl: (60) schannel: SNI or certificate check failed: SEC_E_WRONG_PRINCIPAL (0x80090322) - The target principal name is incorrect.
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the webpage mentioned above.
 ```
 
 **Випадок 3**
@@ -790,7 +811,20 @@ curl -v https://self-signed.badssl.com
 ```
 
 ```
-(вставити вивід)
+* Host self-signed.badssl.com:443 was resolved.
+* IPv6: (none)
+* IPv4: 104.154.89.105
+*   Trying 104.154.89.105:443...
+* schannel: disabled automatic use of client certificate
+* ALPN: curl offers http/1.1
+* schannel: SEC_E_UNTRUSTED_ROOT (0x80090325) - The certificate chain was issued by an authority that is not trusted.
+* closing connection #0
+curl: (60) schannel: SEC_E_UNTRUSTED_ROOT (0x80090325) - The certificate chain was issued by an authority that is not trusted.
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the webpage mentioned above.
 ```
 
 > Якщо використано альтернативний спосіб із параметром `--resolve` — зазначити це та навести фактичну команду.
