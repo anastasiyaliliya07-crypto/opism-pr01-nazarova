@@ -709,8 +709,6 @@ netfilter.org                                  A      36733 Answer     92.243.20
 | IP-адреса |92.243.20.29 | 92.243.20.29|
 | Значення TTL |37084 |36733 |
 
-> Якщо друге значення TTL виявилося більшим за перше — це нормально: кеш резолвера встиг оновитися. Зафіксуйте як є.
-
 ---
 
 ### A.4. Контрольний ресурс
@@ -724,7 +722,41 @@ curl -v https://google.com
 **Вивід:**
 
 ```
-(вставити повний вивід)
+* Host google.com:443 was resolved.
+* IPv6: (none)
+* IPv4: 142.250.120.139, 142.250.120.138, 142.250.120.102, 142.250.120.100, 142.250.120.101, 142.250.120.113
+*   Trying 142.250.120.139:443...
+* schannel: disabled automatic use of client certificate
+* ALPN: curl offers http/1.1
+* ALPN: server accepted http/1.1
+* Connected to google.com (142.250.120.139) port 443
+* using HTTP/1.x
+> GET / HTTP/1.1
+> Host: google.com
+> User-Agent: curl/8.13.0
+> Accept: */*
+>
+* Request completely sent off
+< HTTP/1.1 301 Moved Permanently
+< Location: https://www.google.com/
+< Content-Type: text/html; charset=UTF-8
+< Content-Security-Policy-Report-Only: object-src 'none';base-uri 'self';script-src 'nonce-hgiY6ak5NEysTKgkK-XW6A' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp
+< Date: Sat, 12 Sep 2026 12:26:40 GMT
+< Expires: Mon, 12 Oct 2026 12:26:40 GMT
+< Cache-Control: public, max-age=2592000
+< Server: gws
+< Content-Length: 220
+< X-XSS-Protection: 0
+< X-Frame-Options: SAMEORIGIN
+< Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+<
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="https://www.google.com/">here</A>.
+</BODY></HTML>
+* Connection #0 to host google.com left intact
 ```
 
 ---
