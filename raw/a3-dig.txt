@@ -1,1 +1,11 @@
+Name                                           Type   TTL   Section    IPAddress
+----                                           ----   ---   -------    ---------
+netfilter.org                                  AAAA   37953 Answer     2001:4b98:dc0:45:216:3eff:fe8c:1b05
+netfilter.org                                  A      37084 Answer     92.243.20.29
 
+
+
+Name                                           Type   TTL   Section    IPAddress
+----                                           ----   ---   -------    ---------
+netfilter.org                                  AAAA   37603 Answer     2001:4b98:dc0:45:216:3eff:fe8c:1b05
+netfilter.org                                  A      36733 Answer     92.243.20.29
