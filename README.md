@@ -672,19 +672,23 @@ curl -v http://neverssl.com
 **Команда (перше виконання):**
 
 ```
-dig ВАШ_ДОМЕН
+Resolve-DnsName netfilter.org
 ```
 
 **Вивід:**
 
 ```
-(вставити повний вивід)
+Name                                           Type   TTL   Section    IPAddress
+----                                           ----   ---   -------    ---------
+netfilter.org                                  AAAA   37953 Answer     2001:4b98:dc0:45:216:3eff:fe8c:1b05
+netfilter.org                                  A      37084 Answer     92.243.20.29
+
 ```
 
 **Команда (повторне виконання через 5–7 хвилин):**
 
 ```
-dig ВАШ_ДОМЕН
+Resolve-DnsName netfilter.org
 ```
 
 **Вивід:**
