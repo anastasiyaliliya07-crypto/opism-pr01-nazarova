@@ -827,8 +827,6 @@ establish a secure connection to it. To learn more about this situation and
 how to fix it, please visit the webpage mentioned above.
 ```
 
-> Якщо використано альтернативний спосіб із параметром `--resolve` — зазначити це та навести фактичну команду.
-
 ---
 
 ## Частина B. Власна модель рівнів
