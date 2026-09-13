@@ -835,49 +835,11 @@ how to fix it, please visit the webpage mentioned above.
 
 | № | Назва групи (власне формулювання) | Рядки виводу, віднесені до групи | Обґрунтування |
 |---|---|---|---|
-| 1 |Вебсторінка |HTML-код сторінок.
-<html>, <head>, <body>, <style>, <noscript>, <title>.. |Це вміст (HTML/CSS/JS) HTTP-відповіді, який передається мережею для інтерпретації та відображення у браузері користувача. |
-| 2 |Запит і відповідь |(запит):
-> GET / HTTP/1.1
-> Host: netfilter.org / > Host: neverssl.com / > Host: google.com
-> User-Agent: curl/8.13.0
-> Accept: */*
-(відповідь):
-< HTTP/1.1 200 OK
-< Date: Sat, 12 Sep 2026 10:59:31 GMT
-< Server: Apache
-< Last-Modified: Tue, 01 Sep 2026 16:46:04 GMT
-< ETag: "5e02-65a6ea78fedd5"
-< Accept-Ranges: bytes
-< Content-Length: 24066
-< Vary: Accept-Encoding
-< Content-Type: text/html
-
-< Server: Apache/2.4.68 ()
-< Upgrade: h2,h2c
-< Connection: Upgrade
-< Last-Modified: Wed, 29 Jun 2022 00:23:33 GMT
-< ETag: "f79-5e28b29d38e93"
-< Accept-Ranges: bytes
-< Content-Length: 3961
-< Vary: Accept-Encoding |"діалоги", якими комп'ютер і сервер обмінюються для організації зв'язку. Клієнт - запит, сервер - відповідь. |
-| 3 |Захист і шифрування |* schannel: disabled automatic use of client certificate
-* ALPN: curl offers http/1.1
-* schannel: next InitializeSecurityContext failed: SEC_E_CERT_EXPIRED ...(помилка: прострочений сертифікат)
-* schannel: SNI or certificate check failed: SEC_E_WRONG_PRINCIPAL ...(помилка: сертифікат від іншого сайту)
-* schannel: SEC_E_UNTRUSTED_ROOT ...(помилка: ненадійний видавець) |Це охорона. Йде перевірка процесу роботи захищеного TLS-з'єднання, узгодження протоколів шифрування та перевірка сертифікатів. На звичайному http:// її немає, а на https:// вона є, і вона перевіряє безпеку. Якщо сертифікат поганий - з'єднання розривається (closing connection). |
-| 4 |DNS-адресація та розпізнавання імен |netfilter.org AAAA 37953 Answer 2001:4b98:dc0:45:216:3eff:fe8c:1b05
-netfilter.org A 37084 Answer 92.243.20.29
-
-netfilter.org AAAA 37603 Answer 2001:4b98:dc0:45:216:3eff:fe8c:1b05
-netfilter.org A 36733 Answer 92.243.20.29 |Переклад зрозумілого імені сайту (наприклад, netfilter.org) у цифрову IP-адресу (наприклад, 92.243.20.29) за допомогою DNS-записів (A, AAAA) із зазначенням часу їх збереження в кеші (TTL). |
-| 5 |Встановлення та завершення з'єднання |* Host google.com:443 was resolved.
-* IPv6: (none)
-* IPv4: 142.250.120.139, 142.250.120.138, 142.250.120.102, 142.250.120.100, 142.250.120.101, 142.250.120.113
-* Trying 142.250.120.139:443...
-* Connected to google.com (142.250.120.139) port 443
-* Trying 104.154.89.105:443...
-* closing connection #0 |Факт того, що ПК проклав канал до конкретного сервера в Інтернеті за його IP-адресою і портом. |
+| 1 |Вебсторінка |HTML-код сторінок. <html>, <head>, <body>, <style>, <noscript>, <title>.. |Це вміст (HTML/CSS/JS) HTTP-відповіді, який передається мережею для інтерпретації та відображення у браузері користувача. |
+| 2 |Запит і відповідь |(запит): > GET / HTTP/1.1 > Host: netfilter.org / > Host: neverssl.com / > Host: google.com > User-Agent: curl/8.13.0 > Accept: */*   (відповідь): < HTTP/1.1 200 OK < Date: Sat, 12 Sep 2026 10:59:31 GMT < Server: Apache < Last-Modified: Tue, 01 Sep 2026 16:46:04 GMT < ETag: "5e02-65a6ea78fedd5" < Accept-Ranges: bytes < Content-Length: 24066 < Vary: Accept-Encoding < Content-Type: text/html   < Server: Apache/2.4.68 () < Upgrade: h2,h2c < Connection: Upgrade < Last-Modified: Wed, 29 Jun 2022 00:23:33 GMT < ETag: "f79-5e28b29d38e93" < Accept-Ranges: bytes < Content-Length: 3961 < Vary: Accept-Encoding |"діалоги", якими комп'ютер і сервер обмінюються для організації зв'язку. Клієнт - запит, сервер - відповідь. |
+| 3 |Захист і шифрування |* schannel: disabled automatic use of client certificate * ALPN: curl offers http/1.1 * schannel: next InitializeSecurityContext failed: SEC_E_CERT_EXPIRED ...(помилка: прострочений сертифікат) * schannel: SNI or certificate check failed: SEC_E_WRONG_PRINCIPAL ...(помилка: сертифікат від іншого сайту) * schannel: SEC_E_UNTRUSTED_ROOT ...(помилка: ненадійний видавець) |Це охорона. Йде перевірка процесу роботи захищеного TLS-з'єднання, узгодження протоколів шифрування та перевірка сертифікатів. На звичайному http:// її немає, а на https:// вона є, і вона перевіряє безпеку. Якщо сертифікат поганий - з'єднання розривається (closing connection). |
+| 4 |DNS-адресація та розпізнавання імен |netfilter.org AAAA 37953 Answer 2001:4b98:dc0:45:216:3eff:fe8c:1b05 netfilter.org A 37084 Answer 92.243.20.29 netfilter.org AAAA 37603 Answer 2001:4b98:dc0:45:216:3eff:fe8c:1b05 netfilter.org A 36733 Answer 92.243.20.29 |Переклад зрозумілого імені сайту (наприклад, netfilter.org) у цифрову IP-адресу (наприклад, 92.243.20.29) за допомогою DNS-записів (A, AAAA) із зазначенням часу їх збереження в кеші (TTL). |
+| 5 |Встановлення та завершення з'єднання |* Host google.com:443 was resolved. * IPv6: (none) * IPv4: 142.250.120.139, 142.250.120.138, 142.250.120.102, 142.250.120.100, 142.250.120.101, 142.250.120.113 * Trying 142.250.120.139:443... * Connected to google.com (142.250.120.139) port 443 * Trying 104.154.89.105:443... * closing connection #0 |Факт того, що ПК проклав канал до конкретного сервера в Інтернеті за його IP-адресою і портом. |
 
 *Групи впорядковано від найближчої до користувача (№ 1) до найближчої до апаратного забезпечення. Зайві рядки вилучити, за потреби — додати.*
 
