@@ -884,7 +884,7 @@ how to fix it, please visit the webpage mentioned above.
 | № | Рядок виводу | Джерело (номер завдання) |
 |---|---|---|
 | 1 |`* schannel: disabled automatic use of client certificate`<br>`* ALPN: curl offers http/1.1`<br>`* ALPN: server accepted http/1.1`  | А1, А4, А5 |
-| 2 |`< ETag: "f79-5e28b29d38e93"`  |А2 |
+| 2 |`< ETag: "5e02-65a6ea78fedd5"`/`< ETag: "f79-5e28b29d38e93"`  |А1/А2 |
 | 3 |`< X-XSS-Protection: 0`<br>`< X-Frame-Options: SAMEORIGIN`<br>`< Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000` |А4 |
 
 *Пояснення до цих рядків не потрібне.*
