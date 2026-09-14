@@ -881,7 +881,7 @@ how to fix it, please visit the webpage mentioned above.
 
 **6. Три рядки з власних виводів, про які не йшлося на лекції 1:**
 
-| № | Рядок виводу | Джерело (номер завдання) |
+| № | Рядки виводу | Джерело (номер завдання) |
 |---|---|---|
 | 1 |`* schannel: disabled automatic use of client certificate`<br>`* ALPN: curl offers http/1.1`<br>`* ALPN: server accepted http/1.1`  | А1, А4, А5 |
 | 2 |`< ETag: "5e02-65a6ea78fedd5"`/`< ETag: "f79-5e28b29d38e93"`  |А1/А2 |
