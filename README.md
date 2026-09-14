@@ -861,7 +861,7 @@ how to fix it, please visit the webpage mentioned above.
 
 **2. Які рядки наявні у виводі A.1 і відсутні у виводі A.2? Чим це зумовлено?**
 
-> 
+> У виводі A.1 наявні рядки `* schannel: disabled automatic use of client certificate`<br>`* ALPN: curl offers http/1.1`<br>`* ALPN: server accepted http/1.1`, які відсутні в A.2. Це тому, що сайт netfilter.org використовує шифроване з'єднання HTTPS, а neverssl.com працює через незахищений протокол HTTP без шифрування.
 
 **3. Звідки у виводі з'явилося значення `443`, якщо його не було вказано в адресі?**
 
